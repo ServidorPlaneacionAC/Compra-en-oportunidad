@@ -366,7 +366,7 @@ if data_file is not None:
     if restricciones["Costo de los Inventarios"] or restricciones["Costo de Transporte"]:
 
         fig = px.bar(df_melted[~df_melted['Variable'].isin([
-#             'Costo Total Acumulado',
+            'Costo Total Acumulado',
             'Compra Acumulado',
             'Inventario Acumulado'])]
                         , x='Semana', y='value', color='Variable', barmode='stack', text_auto='$,.0f')
