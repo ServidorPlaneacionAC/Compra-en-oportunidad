@@ -367,6 +367,7 @@ if data_file is not None:
 
         fig = px.bar(df_melted[~df_melted['Variable'].isin([
             'Costo Total Acumulado',
+            'CostoTotalAcumulado',
             'Compra Acumulado',
             'Inventario Acumulado'])]
                         , x='Semana', y='value', color='Variable', barmode='stack', text_auto='$,.0f')
@@ -384,7 +385,6 @@ if data_file is not None:
                         ))
 
         st.write(fig)
-        st.write(df_melted.variable.columns)
         
 
 
