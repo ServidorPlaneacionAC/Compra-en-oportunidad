@@ -118,8 +118,8 @@ if data_file is not None:
     
     if restricciones["Politica Inventario Máximo y Mínimo"]:
         
-        inventarioMaximo = st.slider("Inventario Máximo", 20, 25, 20)
-        inventarioMinimo = st.slider("Inventario Minimo", 2, 4, 2)
+        inventarioMaximo = st.slider("Inventario Máximo", 0, 120, 20)
+        inventarioMinimo = st.slider("Inventario Minimo", 2, 40, 2)
         
         # Cumplir con politicas de Inventario
 
