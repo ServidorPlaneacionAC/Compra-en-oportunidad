@@ -79,6 +79,7 @@ if data_file is not None:
     inventarioInicial = st.slider("Inventario Inicial", 0, 2000000, 1140000)
 
     cont=-1
+    #Inventario[(semanas[cont],m)]indica el inventario de la semana pasada
     for m in materiales:
         for s in semanas:
             if s == semanas[0]:
@@ -120,6 +121,7 @@ if data_file is not None:
         
         inventarioMaximo = st.slider("Inventario Máximo", 0, 120, 20)
         inventarioMinimo = st.slider("Inventario Minimo", 2, 40, 2)
+        LeadTime = st.slider("Lead Time", 2, 40, 1)
         
         # Cumplir con politicas de Inventario
 
