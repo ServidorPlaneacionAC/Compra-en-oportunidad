@@ -123,6 +123,8 @@ if data_file is not None:
         inventarioMinimo = st.slider("Inventario Minimo", 2, 40, 2)
         LeadTime = st.slider("Lead Time", 2, 40, 1)
         
+        demanda[:5,0]
+
         # Cumplir con politicas de Inventario
 
         for m in materiales:
