@@ -390,7 +390,7 @@ if data_file is not None:
 
         st.write(fig)
 
-        st.write(demanda)
+        st.write(demanda[0])
         
 
 
