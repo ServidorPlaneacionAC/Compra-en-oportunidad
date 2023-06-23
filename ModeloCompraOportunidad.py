@@ -130,7 +130,7 @@ if data_file is not None:
         for m in materiales:
             for s in semanas:
                 mod_co += Inventario[(s,m)]  <= demanda[s][m]*inventarioMaximo
-                st.write(demanda[s][m])
+                st.write(demanda[:5,0])
 
         for m in materiales:
             for s in semanas:
