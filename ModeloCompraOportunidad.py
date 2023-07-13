@@ -120,6 +120,13 @@ if data_file is not None:
         
         inventarioMaximo = st.slider("Inventario Máximo", 0, 120, 20)
         inventarioMinimo = st.slider("Inventario Minimo", 2, 40, 2)
+        leadTime = st.slider("Semanas de Lead Time", 1, 20, 2)
+        
+        #Generar media movil de de demanda para gestionar las politicas con esa media
+        #Se debe generar un condicional, si la semana es menor al lead time se genera el promedio con las
+        #semanas que van, sino se genera la media movil normal, para terminos de pulp es mas comodo 
+        #generar un arreglo un arreglo por semana y material y alli almacenar este promedio
+
         
         # Cumplir con politicas de Inventario
 
