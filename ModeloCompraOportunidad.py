@@ -133,7 +133,7 @@ if data_file is not None:
         #     for s in semanas:
         #         demanda_movil[s][m]=demanda_movil_mat[s]
 
-        st.write(demanda[:][:])
+        st.write(demanda)
 
         # Cumplir con politicas de Inventario
         for m in materiales:
