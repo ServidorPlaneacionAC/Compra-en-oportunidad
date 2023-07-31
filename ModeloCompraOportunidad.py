@@ -127,9 +127,15 @@ if data_file is not None:
         #semanas que van, sino se genera la media movil normal, para terminos de pulp es mas comodo 
         #generar un arreglo un arreglo por semana y material y alli almacenar este promedio
 
-        
-        # Cumplir con politicas de Inventario
+        # demanda_movil=[]
+        # for m in manteriales:
+        #     demanda_movil_mat=generar_demanda_movil(demanda[:][m],leadTime)
+        #     for s in semanas:
+        #         demanda_movil[s][m]=demanda_movil_mat[s]
 
+        st.write(demanda[:][m])
+
+        # Cumplir con politicas de Inventario
         for m in materiales:
             for s in semanas:
                 mod_co += Inventario[(s,m)]  <= demanda[s][m]*inventarioMaximo
@@ -138,7 +144,27 @@ if data_file is not None:
             for s in semanas:
                 mod_co += Inventario[(s,m)] >= demanda[s][m]*inventarioMinimo
 
+    def generar_demanda_movil(lista, ventana):
+        #lista representa la demanda planeada para un material y ventana es el leadtime
+        medias = []    
+        for i in range(1,ventana):
+            sub_lista = lista[:i]
+            media = sum(sub_lista) / (i)
+            medias.append(media)
+
+        for i in range(len(lista) - ventana + 1):        
+            sub_lista = lista[i:i+ventana]
+            media = sum(sub_lista) / ventana
+            medias.append(media)
+        return medias
+
+    def promedio_n_primeras_posiciones(lista, n):
+        # if n <= 0 or n > len(lista):
+        #     raise ValueError("El valor de 'n' debe ser un número positivo menor o igual al tamaño de la lista.")
         
+        suma = sum(lista[:n])
+        promedio = suma / n
+        return promedio
         
     if restricciones["Costo de los Inventarios"] == True:
         
